@@ -39,28 +39,7 @@ class AuthorTest < Minitest::Test
     called = charlotte_bronte.books
 
     assert_equal 2, called.length
-    assert_equal ['Jane Eyre', 'Villette'], called.book_details[:title]
+    assert_equal 'Jane Eyre', called[0].book_details[:title]
+    assert_equal 'Villette', called[1].book_details[:title]
   end
 end
-# ```ruby
-# > require "./lib/author"
-# # => true
-#
-# > charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
-# # => #<Author:0x007fb410ada400>
-#
-# > charlotte_bronte.books
-# # => []
-#
-# > charlotte_bronte.add_book("Jane Eyre", "October 16, 1847")
-# # => #<Book:0x007f98a9c6ace8 @author_first_name="Charlotte", @author_last_name="Bronte", @publication_date="1847", @title="Jane Eyre">
-#
-# > charlotte_bronte.books
-# # => [#<Book:0x007f98a9c6ace8 @author_first_name="Charlotte", @author_last_name="Bronte", @publication_date="10/16/1847", @title="Jane Eyre">]
-#
-# > charlotte_bronte.add_book("Villette", "1853")
-# # => #<Book:0x007f98a9c6ace8 @author_first_name="Charlotte", @author_last_name="Bronte", @publication_date="1847", @title="Villette">
-#
-# > charlotte_bronte.books
-# # => [#<Book:0x007f98a9c6ace8 @author_first_name="Charlotte", @author_last_name="Bronte", @publication_date="10/16/1847", @title="Jane Eyre">, #<Book:0x007f98a9c6add3 @author_first_name="Charlotte", @author_last_name="Bronte", @publication_date="1847", @title="Villette">]
-# ```
